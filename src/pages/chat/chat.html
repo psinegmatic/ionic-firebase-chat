@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Web UI Chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <div class="chat-messages">
+      <ul class="mesasages">
+        <li class="message" *ngFor="let message of messages" [ngClass]="{'message--right': message.username === username, 'message--special': message?.specialMessage}">
+          <h6 class="message__username">{{message.username}}</h6>
+          <p class="message__text">
+            <ion-chip [color]="message.username === username ? 'light': ''">
+              <ion-icon name="ios-contact"></ion-icon>
+              <ion-label>{{message.message}}</ion-label>
+            </ion-chip>
+          </p>
+        </li>
+      </ul>
+    </div>
+</ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <div class="controls">
+        <ion-input type="text" [(ngModel)]="sendingMessage" (keyup.enter)="sendMessage()"></ion-input>
+        <button ion-button icon-only (click)="sendMessage()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+
+

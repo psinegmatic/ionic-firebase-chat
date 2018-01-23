@@ -1,0 +1,47 @@
+page-chat {
+  .content[padding] {
+    background-color: gainsboro;
+  }
+  .mesasages {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    .message {
+      width: 80%;
+      list-style: none;
+      h6 {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0;
+        margin-bottom: 10px;
+      };
+      .chip {
+        height: auto;
+        max-width: 100%;
+        .label {
+          white-space: normal;
+        }
+      }
+      &--right {
+        margin-left: auto;
+        text-align: right;
+      }
+      &--special {
+        margin: 0 auto;
+        text-align: center;
+        ion-icon {
+          display: none;
+        }
+        .chip {
+          font-weight: bold;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  .controls {
+    padding-left: 5px;
+    display: flex;
+  }
+}
